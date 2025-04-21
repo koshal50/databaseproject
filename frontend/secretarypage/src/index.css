@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Primary Color - Sporty Blue */
+  --primary-50: #e3f2fd;
+  --primary-100: #bbdefb;
+  --primary-200: #90caf9;
+  --primary-300: #64b5f6;
+  --primary-400: #42a5f5;
+  --primary-500: #1e88e5;
+  --primary-600: #1976d2;
+  --primary-700: #1565c0;
+  --primary-800: #0d47a1;
+  --primary-900: #0a2e5c;
+  
+  /* Secondary Color - Teal */
+  --secondary-500: #00897b;
+  --secondary-600: #00796b;
+  
+  /* Accent - Orange */
+  --accent-500: #ff9800;
+  --accent-600: #fb8c00;
+  
+  /* Success - Green */
+  --success-500: #43a047;
+  
+  /* Warning - Amber */
+  --warning-500: #ffb300;
+  
+  /* Error - Red */
+  --error-500: #e53935;
+  
+  /* Neutral */
+  --neutral-50: #f8fafc;
+  --neutral-100: #f1f5f9;
+  --neutral-200: #e2e8f0;
+  --neutral-300: #cbd5e1;
+  --neutral-400: #94a3b8;
+  --neutral-500: #64748b;
+  --neutral-600: #475569;
+  --neutral-700: #334155;
+  --neutral-800: #1e293b;
+  --neutral-900: #0f172a;
+  
+  /* App specific */
+  --background: var(--neutral-50);
+  --foreground: var(--neutral-900);
+  --card-bg: white;
+  --border: var(--neutral-200);
+  
+  /* Spacing system - 8px grid */
+  --space-1: 0.25rem; /* 4px */
+  --space-2: 0.5rem;  /* 8px */
+  --space-3: 0.75rem; /* 12px */
+  --space-4: 1rem;    /* 16px */
+  --space-5: 1.25rem; /* 20px */
+  --space-6: 1.5rem;  /* 24px */
+  --space-8: 2rem;    /* 32px */
+  --space-10: 2.5rem; /* 40px */
+  --space-12: 3rem;   /* 48px */
+  --space-16: 4rem;   /* 64px */
+}
+
+.dark-mode {
+  --background: var(--neutral-900);
+  --foreground: var(--neutral-50);
+  --card-bg: var(--neutral-800);
+  --border: var(--neutral-700);
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--background);
+  color: var(--foreground);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* Bootstrap overrides */
+.btn-primary {
+  background-color: var(--primary-500);
+  border-color: var(--primary-500);
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: var(--primary-600);
+  border-color: var(--primary-600);
+}
+
+.btn-secondary {
+  background-color: var(--secondary-500);
+  border-color: var(--secondary-500);
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus {
+  background-color: var(--secondary-600);
+  border-color: var(--secondary-600);
+}
+
+.card {
+  background-color: var(--card-bg);
+  border-color: var(--border);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Animation durations */
+.transition-300 {
+  transition-duration: 300ms;
+}
+
+.transition-500 {
+  transition-duration: 500ms;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--neutral-100);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--neutral-400);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--neutral-500);
+}
+
+.dark-mode ::-webkit-scrollbar-track {
+  background: var(--neutral-800);
+}
+
+.dark-mode ::-webkit-scrollbar-thumb {
+  background: var(--neutral-600);
+}
+
+/* Custom utility classes */
+.card-hover-effect {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-hover-effect:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.nav-link {
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.nav-link:hover {
+  color: var(--primary-500);
+}
+
+.active-nav-link {
+  color: var(--primary-500) !important;
+  border-left: 3px solid var(--primary-500);
+  background-color: rgba(30, 136, 229, 0.1);
+}
+
+/* Common layout patterns */
+.content-wrapper {
+  padding: var(--space-6);
+}
+
+.sidebar {
+  width: 250px;
+  transition: width 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 0;
+    overflow: hidden;
+  }
+  
+  .sidebar.show {
+    width: 250px;
+  }
+}
