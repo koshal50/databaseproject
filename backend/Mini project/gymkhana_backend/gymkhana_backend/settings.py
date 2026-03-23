@@ -105,10 +105,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',  # Use 'sqlite3' for SQLite
         'NAME': 'gymkhana_db',  # Database name
-        'USER': 'root',  # MySQL username
-        'PASSWORD': 'root',  # MySQL password
-        'HOST': 'localhost',  # Or your remote DB host
-        'PORT': '3306',  # Default MySQL port
+        'USER': '',  # MySQL username
+        'PASSWORD': '',  # MySQL password
+        'HOST': '',  # Or your remote DB host
+        'PORT': '',  # Default MySQL port
     }
 }
 
